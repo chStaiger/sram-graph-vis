@@ -9,7 +9,7 @@ import networkx as nx
 import tomllib
 
 
-def render_editable_network(graph: nx.MultiDiGraph, html_path: Path, plot_type: str = "greedy"):
+def render_editable_network(graph: nx.MultiDiGraph, html_path: Path, plot_type: str = "bipartite"):
     """Save the graph as html file."""
     print(f"Rendering {html_path}:")
 
