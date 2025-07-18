@@ -21,5 +21,5 @@ def welcome():
                 - To visually explore your own SRAM graph for your organisation.
 
             """)
-    with open(repo_root / "surfiamviz/webutils/all_nodes.html", "r", encoding="utf-8") as htmlfile:
+    with open(repo_root / "surfiamviz/webutils/sram_basic.html", "r", encoding="utf-8") as htmlfile:
         components.html(htmlfile.read(), height=450)
