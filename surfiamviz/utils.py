@@ -53,7 +53,6 @@ def community_layout(graph: nx.MultiDiGraph, scaling: int, alg: str = "greedy") 
         warnings.warn(f"Plotting type {alg} not known. Generate network without specific positioning.")
         return graph
 
-    print(type(communities))
 
     supergraph = nx.cycle_graph(len(communities))
     superpos = nx.spring_layout(supergraph, scale=scaling / 2, seed=429)
