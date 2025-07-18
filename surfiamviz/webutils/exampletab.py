@@ -39,7 +39,7 @@ def examples():
         example_graphs.keys(),
         index=None,
     )
-    plotting_option = form.selectbox("Choose the plotting type:", ["bipartite", "greedy    ", "louvain"])
+    plotting_option = form.selectbox("Choose the plotting type:", ["bipartite", "greedy", "louvain"])
     form.form_submit_button("**Render**", icon=":material/thumb_up:")
     config_file = repo_root / "configs/sram_config.toml"
     if not config_file.is_file():
