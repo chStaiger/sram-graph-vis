@@ -20,8 +20,9 @@ def render_editable_network(graph: nx.MultiDiGraph, html_path: Path, plot_type: 
         pos = nx.drawing.layout.multipartite_layout(graph, scale=scaling)
         for name, (x, y) in pos.items():
             node = graph.nodes[name]
-            node["x"] = x
-            node["y"] = y
+            # render graph in vertical orientation
+            node["x"] = y
+            node["y"] = x
         # scale nodes
         deg_centrality = dict(graph.to_undirected().degree)
         _ = [graph.add_node(node, size=25 + deg_centrality[node]) for node in graph.nodes()]
@@ -63,8 +64,9 @@ def community_layout(graph: nx.MultiDiGraph, scaling: int, alg: str = "greedy") 
         pos.update(nx.spring_layout(nx.subgraph(graph, comm), center=center, scale=scaling / 2, seed=1430))
     for name, (x, y) in pos.items():
         node = graph.nodes[name]
-        node["x"] = x
-        node["y"] = y
+        # render graph in vertical orientation
+        node["x"] = y
+        node["y"] = x
 
     return graph
 
