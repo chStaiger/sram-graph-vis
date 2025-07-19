@@ -239,6 +239,14 @@ def render_graph_from_config():
     )
     parser.add_argument("-v", "--verbose", help="Verbose output.", action="store_true", default=False)
 
+    plotting = parser.add_argument_group("Type of plotting: bipartite (default), greedy, louvain")
+    plotting.add_argument(
+        "--plot",
+        help="Plot a graph sorted by node types (bipartite) or by communities (greedy, louvain).",
+        type=str,
+        default="bipartite",
+    )
+
     args = parser.parse_args()
 
     graph_config = _parse_config(args)
@@ -266,7 +274,7 @@ def render_graph_from_config():
     print("--> Infer collaboration-aplication relationships.")
     infer_coll_app_edges(graph, args.verbose)
     color_edges(graph, graph_config)
-    render_editable_network(graph, args.output.absolute())
+    render_editable_network(graph, args.output.absolute(), plot_type=args.plot)
 
 
 def get_stats_from_json():

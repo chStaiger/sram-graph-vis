@@ -15,7 +15,7 @@ entities.type = "BACKBONE"
 
 entity_role.edges = [["ORGANISATION", "ORG_ADMIN"],
                      ["ORGANISATION", "ORG_MANAGER"],
-                     ["UNIT", "U_MANAGER"],
+                     ["UNIT", "UNIT_MANAGER"],
                      ["COLLABORATION_1", "RESEARCHER_1"],
                      ["COLLABORATION_1", "RESEARCHER_2"],
                      ["COLLABORATION_2", "RESEARCHER_1"],
@@ -39,7 +39,7 @@ members.edges = [["RESEARCHER_1", "COLLABORATION_1", "member_of"],
 members.type = "MEMBERS"
 
 actions.edges = [["ORG_MANAGER", "COLLABORATION_1", "create"],
-                 ["U_MANAGER", "COLLABORATION_2", "create"],
+                 ["UNIT_MANAGER", "COLLABORATION_2", "create"],
                  ["COLL_ADMIN_2", "RESEARCHER_1", "invite"],
                  ["COLL_ADMIN_1", "RESEARCHER_2", "invite"],
                  ["APPLICATION_2", "APP_GROUP_1", "create"],
